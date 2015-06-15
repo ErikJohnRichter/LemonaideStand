@@ -3,4 +3,3 @@ C:\Users\erichter_h\Dropbox\Coursework\Extra Work\Lemonaide Stand\Lemonaide Stan
 C:\Users\erichter_h\Dropbox\Coursework\Extra Work\Lemonaide Stand\Lemonaide Stand\bin\Debug\Lemonaide Stand.pdb
 C:\Users\erichter_h\Dropbox\Coursework\Extra Work\Lemonaide Stand\Lemonaide Stand\obj\Debug\Lemonaide Stand.exe
 C:\Users\erichter_h\Dropbox\Coursework\Extra Work\Lemonaide Stand\Lemonaide Stand\obj\Debug\Lemonaide Stand.pdb
-C:\Users\erichter_h\Dropbox\Coursework\Extra Work\Lemonaide Stand\Lemonaide Stand\obj\Debug\Lemonaide Stand.csprojResolveAssemblyReference.cache
