@@ -46,7 +46,7 @@ namespace Lemonaide_Stand
                 Thread.Sleep(3000);
                 Console.WriteLine("Today is {0}", type);
                 Thread.Sleep(1000);
-                int money = 5;
+                int money = 12;
                 int cups = 5;
                 int lemonaide = 5;
                 int water = 5;
@@ -158,6 +158,7 @@ namespace Lemonaide_Stand
                 else
                 {
                     Thread.Sleep(500);
+                    Console.WriteLine("");
                     Console.WriteLine("How much should each glass be?");
                     Console.WriteLine("----------------");
                     Console.WriteLine("1, 2, 3, 4, or 5");
@@ -200,7 +201,7 @@ namespace Lemonaide_Stand
             int totalDemand = demand + Math.Abs(price - 6);
             Console.WriteLine("Your stand is all set up and OPEN for BUSINESS!");
             Thread.Sleep(1000);
-            Console.WriteLine("There are people walking down the sidewalk...");
+            Console.WriteLine("Let's sell some Lemonaide!");
             Thread.Sleep(3000);
             Random demandRnd = new Random();
             
@@ -208,19 +209,23 @@ namespace Lemonaide_Stand
             for (int i=0; i < cupsMade; i++)
             {
                 int randomElement = demandRnd.Next(0, totalDemand);
-                if (totalDemand - randomElement >= totalDemand / 2)
+                if (randomElement >= 3)
                 {   
                     cupsSold++;   
                 }             
             }
             int profit = price * cupsSold;
             money = money + profit;
-            Console.WriteLine("It's mid-morning...");
+            Console.WriteLine("");
+            Console.WriteLine("--It's mid-morning--");
             Thread.Sleep(3000);
-            Console.WriteLine("It's noon...");
+            Console.WriteLine("");
+            Console.WriteLine("--It's noon--");
             Thread.Sleep(3000);
-            Console.WriteLine("It's mid-afternoon...");
+            Console.WriteLine("");
+            Console.WriteLine("--It's mid-afternoon--");
             Thread.Sleep(3000);
+            Console.WriteLine("");
             Console.WriteLine("The sun is going down. Let's see how you did...");
             Thread.Sleep(3000);
             Console.WriteLine("");
@@ -247,7 +252,7 @@ namespace Lemonaide_Stand
             Thread.Sleep(1000);
             Console.WriteLine("You have ${0} in petty cash.", money);
             Console.WriteLine("");          
-            Console.WriteLine("Each unit of supplies costs $1.");
+            Console.WriteLine("Each unit of supplies costs $0.33");
             Console.WriteLine("");         
             Console.WriteLine("What would you like to buy?");
             Console.WriteLine("1: Cups");
@@ -262,9 +267,9 @@ namespace Lemonaide_Stand
                     Console.WriteLine("");
                     Console.WriteLine("How many paper cups would you like to buy?");
                     int buyCups = Convert.ToInt16(Console.ReadLine());
-                    if (money >= buyCups)
+                    if (money >= (buyCups/3))
                     {
-                        money = money - buyCups;
+                        money = money - (buyCups/3);
                         cups = cups + buyCups;
                         Console.WriteLine("");
                         Console.WriteLine("You just purchased {0} cups and have {1} in your supply cart", buyCups, cups);
@@ -294,9 +299,9 @@ namespace Lemonaide_Stand
                     Console.WriteLine("");
                     Console.WriteLine("How much lemonaide powder would you like to buy?");
                     int buyLemonaide = Convert.ToInt16(Console.ReadLine());
-                    if (money >= buyLemonaide)
+                    if (money >= (buyLemonaide/3))
                     {
-                        money = money - buyLemonaide;
+                        money = money - (buyLemonaide/3);
                         lemonaide = lemonaide + buyLemonaide;
                         Console.WriteLine("");
                         Console.WriteLine("You just purchased {0} Tbs Lemonaide and have {1} in your supply cart", buyLemonaide, lemonaide);
@@ -326,9 +331,9 @@ namespace Lemonaide_Stand
                     Console.WriteLine("");
                     Console.WriteLine("How many cups of water would you like to buy?");
                     int buyWater = Convert.ToInt16(Console.ReadLine());
-                    if (money >= buyWater)
+                    if (money >= (buyWater/3))
                     {
-                        money = money - buyWater;
+                        money = money - (buyWater/3);
                         water = water + buyWater;
                         Console.WriteLine("");
                         Console.WriteLine("You just purchased {0} cups of water and have {1} in your supply cart", buyWater, water);
