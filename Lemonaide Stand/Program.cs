@@ -46,7 +46,7 @@ namespace Lemonaide_Stand
                 Thread.Sleep(3000);
                 Console.WriteLine("Today is {0}", type);
                 Thread.Sleep(1000);
-                int money = 12;
+                double money = 12.00;
                 int cups = 5;
                 int lemonaide = 5;
                 int water = 5;
@@ -54,7 +54,7 @@ namespace Lemonaide_Stand
             }
         }
 
-        private static void Game(int cups, int lemonaide, int water, int money, int demand, Weather type)
+        private static void Game(int cups, int lemonaide, int water, double money, int demand, Weather type)
         {
             Console.WriteLine("");
             Console.WriteLine("Let's check your supply...");
@@ -196,7 +196,7 @@ namespace Lemonaide_Stand
             }
         }
 
-        private static void Sell(int cupsMade, int money, int demand, int price, int cups, int water, int lemonaide, Weather type)
+        private static void Sell(int cupsMade, double money, int demand, int price, int cups, int water, int lemonaide, Weather type)
         {
             int totalDemand = demand + Math.Abs(price - 6);
             Console.WriteLine("Your stand is all set up and OPEN for BUSINESS!");
@@ -236,7 +236,7 @@ namespace Lemonaide_Stand
             Game(cups, lemonaide, water, money, demand, type);
         }
 
-        private static void buyItems(int cups, int lemonaide, int water, int money, int demand, Weather type)
+        private static void buyItems(int cups, int lemonaide, int water, double money, int demand, Weather type)
         {
             Console.WriteLine("");
             Console.WriteLine("");
@@ -267,9 +267,9 @@ namespace Lemonaide_Stand
                     Console.WriteLine("");
                     Console.WriteLine("How many paper cups would you like to buy?");
                     int buyCups = Convert.ToInt16(Console.ReadLine());
-                    if (money >= (buyCups/3))
+                    if (money >= buyCups*.33)
                     {
-                        money = money - (buyCups/3);
+                        money = money - (buyCups*.33);
                         cups = cups + buyCups;
                         Console.WriteLine("");
                         Console.WriteLine("You just purchased {0} cups and have {1} in your supply cart", buyCups, cups);
@@ -299,9 +299,9 @@ namespace Lemonaide_Stand
                     Console.WriteLine("");
                     Console.WriteLine("How much lemonaide powder would you like to buy?");
                     int buyLemonaide = Convert.ToInt16(Console.ReadLine());
-                    if (money >= (buyLemonaide/3))
+                    if (money >= (buyLemonaide*.33))
                     {
-                        money = money - (buyLemonaide/3);
+                        money = money - (buyLemonaide * .33);
                         lemonaide = lemonaide + buyLemonaide;
                         Console.WriteLine("");
                         Console.WriteLine("You just purchased {0} Tbs Lemonaide and have {1} in your supply cart", buyLemonaide, lemonaide);
@@ -331,9 +331,9 @@ namespace Lemonaide_Stand
                     Console.WriteLine("");
                     Console.WriteLine("How many cups of water would you like to buy?");
                     int buyWater = Convert.ToInt16(Console.ReadLine());
-                    if (money >= (buyWater/3))
+                    if (money >= (buyWater*.33))
                     {
-                        money = money - (buyWater/3);
+                        money = money - (buyWater * .33);
                         water = water + buyWater;
                         Console.WriteLine("");
                         Console.WriteLine("You just purchased {0} cups of water and have {1} in your supply cart", buyWater, water);
@@ -364,9 +364,9 @@ namespace Lemonaide_Stand
                     Console.WriteLine("");
                     Console.WriteLine("How many units of everything would you like to buy?");
                     int buyEverything = Convert.ToInt16(Console.ReadLine());
-                    if (money >= (buyEverything*3))
+                    if (money >= (buyEverything*.99))
                     {
-                        money = money - (buyEverything*3);
+                        money = money - (buyEverything*.99);
                         water = water + buyEverything;
                         cups = cups + buyEverything;
                         lemonaide = lemonaide + buyEverything;
