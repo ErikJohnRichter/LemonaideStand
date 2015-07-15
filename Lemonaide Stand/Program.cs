@@ -46,7 +46,7 @@ namespace Lemonaide_Stand
                 Thread.Sleep(3000);
                 Console.WriteLine("Today is {0}", type);
                 Thread.Sleep(1000);
-                double money = 12.00;
+                double money = Math.Round(12.00,2);
                 int cups = 5;
                 int lemonaide = 5;
                 int water = 5;
@@ -186,11 +186,8 @@ namespace Lemonaide_Stand
                     Console.WriteLine("You have {0} tablespoons of lemonaide left", lemonaide);
                     Console.WriteLine("You have {0} cups of water left", water);
                     Console.WriteLine("------------------------------------------");
-                    Console.WriteLine("");
-                    Thread.Sleep(500);
-                    Console.WriteLine("Let's sell some Lemonaide!");
-                    Console.WriteLine("");
-                    Thread.Sleep(3000);
+                    Console.WriteLine("");   
+                    Thread.Sleep(2000);
                     Sell(cupsMade, money, demand, price, cups, water, lemonaide, type);
                 }
             }
@@ -269,7 +266,7 @@ namespace Lemonaide_Stand
                     int buyCups = Convert.ToInt16(Console.ReadLine());
                     if (money >= buyCups*.33)
                     {
-                        money = money - (buyCups*.33);
+                        money = Math.Round((money - (buyCups*.33)),2);
                         cups = cups + buyCups;
                         Console.WriteLine("");
                         Console.WriteLine("You just purchased {0} cups and have {1} in your supply cart", buyCups, cups);
@@ -301,7 +298,7 @@ namespace Lemonaide_Stand
                     int buyLemonaide = Convert.ToInt16(Console.ReadLine());
                     if (money >= (buyLemonaide*.33))
                     {
-                        money = money - (buyLemonaide * .33);
+                        money = Math.Round((money - (buyLemonaide * .33)), 2);
                         lemonaide = lemonaide + buyLemonaide;
                         Console.WriteLine("");
                         Console.WriteLine("You just purchased {0} Tbs Lemonaide and have {1} in your supply cart", buyLemonaide, lemonaide);
@@ -333,7 +330,7 @@ namespace Lemonaide_Stand
                     int buyWater = Convert.ToInt16(Console.ReadLine());
                     if (money >= (buyWater*.33))
                     {
-                        money = money - (buyWater * .33);
+                        money = Math.Round((money - (buyWater * .33)),2);
                         water = water + buyWater;
                         Console.WriteLine("");
                         Console.WriteLine("You just purchased {0} cups of water and have {1} in your supply cart", buyWater, water);
@@ -366,7 +363,7 @@ namespace Lemonaide_Stand
                     int buyEverything = Convert.ToInt16(Console.ReadLine());
                     if (money >= (buyEverything*.99))
                     {
-                        money = money - (buyEverything*.99);
+                        money = Math.Round((money - (buyEverything*.99)),2);
                         water = water + buyEverything;
                         cups = cups + buyEverything;
                         lemonaide = lemonaide + buyEverything;
